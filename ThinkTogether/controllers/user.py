@@ -15,10 +15,10 @@ from ThinkTogether.models.forms import LoginForm
 from ThinkTogether.models.user import User
 
 # Define the blueprint: 'auth', set its url prefix: app.url/auth
-mod_auth = Blueprint('auth', __name__, url_prefix='/auth')
+mod_auth = Blueprint('auth', __name__, url_prefix='/signin')
 
 # Set the route and accepted methods
-@mod_auth.route('/signin/', methods=['GET', 'POST'])
+@mod_auth.route('/', methods=['GET', 'POST'])
 def signin():
 
     # If sign in form is submitted
