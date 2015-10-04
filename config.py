@@ -27,3 +27,7 @@ CSRF_SESSION_KEY = "secret"
 
 # Secret key for signing cookies
 SECRET_KEY = "secret"
+
+# Upload location
+UPLOAD_FOLDER = '/home/dhara/Github/uploads'
+ALLOWED_EXTENSIONS = set(['pdf'])
