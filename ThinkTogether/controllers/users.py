@@ -2,19 +2,17 @@ __author__ = 'bhushan'
 
 # Import flask dependencies
 from flask import Blueprint, request, render_template, \
-                  flash, g, session, redirect, url_for
+                  flash, session, redirect, url_for
 
 # Import password / encryption helper tools
-from werkzeug import check_password_hash, generate_password_hash
 
 # Import the database object from the main app module
-from ThinkTogether import db
 
 # Import module forms
-from ThinkTogether.mod_auth.forms import LoginForm
+from ThinkTogether.models.forms import LoginForm
 
 # Import module models (i.e. User)
-from ThinkTogether.mod_auth.models import User
+from ThinkTogether.models.user import User
 
 # Define the blueprint: 'auth', set its url prefix: app.url/auth
 mod_auth = Blueprint('auth', __name__, url_prefix='/auth')
