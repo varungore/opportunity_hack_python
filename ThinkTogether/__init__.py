@@ -16,6 +16,8 @@ app.config.from_object('config')
 # by modules and controllers
 db = SQLAlchemy(app)
 
+print("Here I am")
+
 # Sample HTTP error handling
 @app.errorhandler(404)
 def not_found(error):
@@ -24,8 +26,12 @@ def not_found(error):
 # Import a module / component using its blueprint handler variable (mod_auth)
 from ThinkTogether.controllers.user import mod_auth as auth_module
 
+# Import a module / component using its blueprint handler variable (home)
+from ThinkTogether.controllers.home import home as home
+
 # Register blueprint(s)
 app.register_blueprint(auth_module)
+app.register_blueprint(home)
 # app.register_blueprint(xyz_module)
 # ..
 
